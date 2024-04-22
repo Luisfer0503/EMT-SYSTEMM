@@ -10,6 +10,40 @@ public final class ArchivoTexto  {
     private boolean archivoExiste;
     private boolean modoLectura;
     private boolean modoEscritura;
+    private File archivo;
+
+    public ArchivoTexto() {
+
+    }
+
+    /*
+    Creacion de archivos dependiendo de que flujo se realice
+     */
+    public void crearArchivo(int flujo) throws IOException {
+        if (flujo == 1){
+            archivo = new File("archivoDatosEmpresariales.txt");
+            BufferedWriter bw;
+            if (!archivo.exists()){
+                bw = new BufferedWriter(new FileWriter(archivo));
+            }
+        }
+        else if (flujo==2){
+            archivo = new File("archivoDatosPersonales.txt");
+            BufferedWriter bw;
+            if (!archivo.exists()){
+                bw = new BufferedWriter(new FileWriter(archivo));
+            }
+        }
+        else if (flujo==3){
+            archivo = new File("contratos.txt");
+            BufferedWriter bw;
+            if (!archivo.exists()){
+                bw = new BufferedWriter(new FileWriter(archivo));
+            }
+        }
+
+    }
+
 
     public ArchivoTexto(String tituloArchivo){
         try {

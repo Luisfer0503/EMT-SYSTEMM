@@ -1,35 +1,52 @@
 package gestor.empresarial.datos;
 
 public final class DatosEmpresariales extends DatosPersonales{
+    //private String id;
+    private String nombreCompleto;
+    private String correo;
     private String adscripcion;
     private String telefonoExterior;
     private String puesto;
 
-    public DatosEmpresariales(int id, String nombre, String apellidos, String correo){
-
+    public String getNombreCompleto() {
+        return nombreCompleto;
     }
 
-    String getAdscripcion() {
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    @Override
+    public String getCorreo() {
+        return correo;
+    }
+
+    @Override
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getAdscripcion() {
         return adscripcion;
     }
 
-    void setAdscripcion(String adscripcion) {
+    public void setAdscripcion(String adscripcion) {
         this.adscripcion = adscripcion;
     }
 
-    String getTelefonoExterior() {
+    public String getTelefonoExterior() {
         return telefonoExterior;
     }
 
-    void setTelefonoExterior(String telefonoExterior) {
+    public void setTelefonoExterior(String telefonoExterior) {
         this.telefonoExterior = telefonoExterior;
     }
 
-    String getPuesto() {
+    public String getPuesto() {
         return puesto;
     }
 
-    void setPuesto(String puesto) {
+    public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
 }

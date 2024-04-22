@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class login extends JFrame implements ActionListener {
+public class Login extends JFrame implements ActionListener {
     private JTextField textFieldUser;
     private JPasswordField passwordFieldPass;
     private JPanel JPanelLogin;
@@ -15,12 +15,18 @@ public class login extends JFrame implements ActionListener {
         return JPanelLogin;
     }
 
-    public login(){
+    /*
+     * Constructor de la clase y detección de evento sobre botones
+     */
+    public Login(){
         cerrarButton.addActionListener(this);
         ingresarButton.addActionListener(this);
 
     }
 
+    /*
+     * Validacion de login y cierre de sesion
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == cerrarButton)
@@ -34,15 +40,18 @@ public class login extends JFrame implements ActionListener {
 
             if(user.equals("luis")&& password.equals("123"))
             {
-                JOptionPane.showMessageDialog(null,"iniciar sesion");
+                JOptionPane.showMessageDialog(null,"Sesion iniciada con éxito");
                 MostraMenu();
             }
             else{
-                JOptionPane.showMessageDialog(null,"error");
+                JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrectos");
             }
         }
     }
 
+    /*
+    Llamado a la ventana del menú de opciones
+     */
     private void MostraMenu()
     {
         JFrame frame=new JFrame("MENU");
@@ -50,6 +59,7 @@ public class login extends JFrame implements ActionListener {
         frame.setContentPane(menu.getJpanel2());
         frame.setSize(600,400);
         frame.setVisible(true);
+        //frame.dispose();
 
     }
 }

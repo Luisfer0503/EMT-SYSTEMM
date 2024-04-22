@@ -1,25 +1,37 @@
 package gestor.empresarial.datos;
 
-public abstract class DatosPersonales {
+public class DatosPersonales {
     private int id;
     private String nombre;
     private String apellidos;
     private String correo;
     private String whatsapp;
 
-    protected int getId() {
+    public DatosPersonales(){
+
+    }
+
+    public DatosPersonales(int id, String nombre, String apellidos, String correo, String whatsapp) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.whatsapp = whatsapp;
+    }
+
+    public int getId() {
         return id;
     }
 
-    protected void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    protected String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    protected void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -31,19 +43,19 @@ public abstract class DatosPersonales {
         this.apellidos = apellidos;
     }
 
-    protected String getCorreo() {
+    public String getCorreo() {
         return correo;
     }
 
-    protected void setCorreo(String correo) {
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
 
-    protected String getWhatsapp() {
+    public String getWhatsapp() {
         return whatsapp;
     }
 
-    protected void setWhatsapp(String whatsapp) {
+    public void setWhatsapp(String whatsapp) {
         this.whatsapp = whatsapp;
     }
 }
